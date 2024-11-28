@@ -81,3 +81,16 @@
 7. Logout 
     > All page have a logout button
     >> When you click the logout button, you will logout successful and go back to login page.
+
+## RESTful CRUD services
+    1 curl -X POST http://localhost:10000/api/items \-F "item=apple" \-F "price=99.99" \-F "quantity=10" \-F "description=Test description" \-F "filetoupload=@/home/yungchunkwok/task2/views/apple.jpg"
+
+        
+    2 curl -X GET http://localhost:10000/api/item/apple
+
+        
+    3 curl -X PUT -H "Content-Type: application/json" --data '{"item":"apple123","price":"20","quantity":"200","description":"Yummy"}' localhost:10000/api/item/apple
+
+        
+    4 curl -X DELETE localhost:10000/api/item/apple123
+   
