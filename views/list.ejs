@@ -1,0 +1,108 @@
+<html>
+<head>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            text-align: center;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: purple;
+            color: white;
+        }
+
+        a {
+            text-decoration: none;
+            color: purple;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: white;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px 10px;
+            background-color: purple;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Item List</h1>
+        <p>Staff Name: <b><%= user.name %></b>, Staff ID: <b><%= user.id %></b>, Login from <b><%= user.type %></b></p>
+        <hr/>
+        <h2>Warehouse Total Items (<%= nItems %>)</h2>
+
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Description</th>
+            </tr>
+            <% for (var item of items) { %>
+                <tr>
+                    <td><a href="/details?_id=<%= item._id %>"><%= item.item %></a></td>
+                    <td><%= item.price %></td>
+                    <td><%= item.quantity %></td>
+                    <td><%= item.description %></td>
+                </tr>
+            <% } %>
+        </table>
+
+        <a href="/create" class="btn">Add Item</a>
+        <a href="/logout" class="btn">Logout</a>
+    </div>
+</body>
+</html>

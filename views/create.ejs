@@ -1,0 +1,85 @@
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logout {
+            position: absolute; 
+            top: 10px; 
+            right: 20px;
+            text-decoration: none;
+            background-color: black;
+            color: white;
+            padding: 5px 20px;
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        input, textarea {
+            margin-bottom: 10px;
+            padding: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: purple;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <a href="/logout" class="logout">Logout</a>
+    <h1>Add New Item</h1>
+    <p>Staff Name: <b><%= user.name %> </b>,  Staff ID: <b><%= user.id %></b>,  Login from <b><%= user.type %></b>, </p>
+    <hr/>
+    Please enter the data what items you want to Add!<br />
+    <form action="/create" method="POST" enctype="multipart/form-data">
+        Item Name: <input type="text" name="item" placeholder="Item Name" required><br>
+        Price: <input type="number" name="price" step="0.01" placeholder="Price" required><br>
+        Quantity: <input type="number" name="quantity" placeholder="Quantity" required><br>
+        Description: <textarea name="description" placeholder="Item Description"></textarea><br>
+        <input type="file" name="filetoupload"><br>
+        <input type="submit" value="Create">  
+    </form>
+    </div>
+</body>
+</html>

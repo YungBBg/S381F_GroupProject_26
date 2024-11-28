@@ -1,0 +1,86 @@
+<html>
+<head>
+    <style>
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        input, textarea {
+            margin-bottom: 10px;
+            padding: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: purple;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: black;
+        }
+        
+        .logout {
+            position: absolute; 
+            top: 10px; 
+            right: 20px;
+            text-decoration: none;
+            background-color: black;
+            color: white;
+            padding: 5px 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <a href="/logout" class="logout">Logout</a>
+    <H1>Update Item: <%= item.item %></H1>
+    <p>Staff Name: <b><%= user.name %> </b>,  Staff ID: <b><%= user.id %></b>,  Login from <b><%= user.type %></b>, </p>
+    <hr/>
+    Please update your item data in here!<br/>
+    <form action="/update" method="POST" enctype="multipart/form-data">
+        Item Name: <input name="item" value="<%= item.item %>"><br>
+        Price: <input name="price" type="number" step="0.01" value="<%= item.price %>"><br>
+        Quantity: <input name="quantity" type="number" value="<%= item.quantity %>"><br>
+        Description: <textarea name="description"><%= item.description %></textarea><br>
+        <input type="file" name="filetoupload"><br>
+        <input type="hidden" name="_id" value="<%= item._id %>">
+        <input type="submit" value="Update">  
+    </form>
+  </div>
+</body>
+</html>
