@@ -6,7 +6,7 @@ var express             = require('express'),
 
 var {MongoClient,ServerApiVersion,ObjectId} = require("mongodb");
 
-const mongourl = 'mongodb+srv://s1366501:s1366501@cluster0.g80nq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const mongourl = 'mongodb+srv://T0001:12345@cluster0.busdi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 const dbName = 'assignment';
 const collectionName = 'items';
 const client = new MongoClient(mongourl, {
