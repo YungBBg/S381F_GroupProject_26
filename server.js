@@ -18,8 +18,8 @@ const client = new MongoClient(mongourl, {
 });
 
 const fbAuth ={
-    'clientID': '1089840959345349',
-    'clientSecret': 'a75251f48224ddea66abc5b80582d6b8',
+    'clientID': '1094810132027943',
+    'clientSecret': '642a0418f64e146865cd85c06e619873',
     'callbackURL': "http://localhost:10000/auth/facebook/callback"
 };
 
