@@ -20,7 +20,7 @@ const client = new MongoClient(mongourl, {
 const fbAuth ={
     'clientID': '1094810132027943',
     'clientSecret': '642a0418f64e146865cd85c06e619873',
-    'callbackURL': "https://gp26.onrender.com/auth/facebook/callback"
+    'callbackURL': "http://localhost:10000/auth/facebook/callback"
 };
 
 
